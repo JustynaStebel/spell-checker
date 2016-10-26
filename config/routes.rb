@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_for :admins
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users, only: [:show, :edit, :update, :destroy]
+  root "users#show"
+  namespace :admin do
+    root "users#index"
+    resources :users, :documents
+  end
 end
