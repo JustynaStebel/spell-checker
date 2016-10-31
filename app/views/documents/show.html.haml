@@ -1,0 +1,8 @@
+%p
+  %strong Title:
+  = @document.name
+  - @document_attachments.each do |p|
+    = image_tag p.file_url
+    = link_to "Edit File", edit_document_document_attachment_path(p)
+    = link_to 'Edit', edit_document_path(@document)
+    = link_to 'Back', documents_path

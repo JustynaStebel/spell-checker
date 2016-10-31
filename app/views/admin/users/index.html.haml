@@ -1,0 +1,19 @@
+%h1 All users
+%table.table.table-bordered
+  %thead
+    %tr
+      %th User ID
+      %th User email
+      %th Number of documents
+      %th Actions
+  %tbody
+    - @users.each do |user|
+      %tr
+        %th= user.id
+        %td= user.email
+        %td= user.documents.count
+        %td
+          = link_to 'Preview', user_path(user)
+          = link_to 'Edit', edit_user_path(user)
+          = link_to('Remove', user_path(user), data: { confirm: 'Are you sure?' },
+            method: 'delete')

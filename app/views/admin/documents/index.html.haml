@@ -1,0 +1,19 @@
+%h1 All documents
+%table.table.table-bordered
+  %thead
+    %tr
+      %th File ID
+      %th File title
+      %th Owner
+      %th Actions
+  %tbody
+    - @documents.each do |doc|
+      %tr
+        %th= doc.id
+        %td= doc.name
+        %td= doc.user.email
+        %td
+          = link_to 'Preview', document_path(doc)
+          = link_to 'Edit', edit_document_path(doc)
+          = link_to('Remove', document_path(doc), data: { confirm: 'Are you sure?' },
+            method: 'delete')

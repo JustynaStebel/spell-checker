@@ -1,0 +1,13 @@
+%h1 My documents
+= link_to 'Upload new', action: 'new'
+%table
+  %tr
+    %th Name
+  - @documents.each do |doc|
+    %tr
+      %td= doc.name
+      %td
+        = link_to 'Preview', document_path(doc)
+        = link_to 'Edit', edit_document_path(doc)
+        = link_to('Remove', document_path(doc), data: { confirm: 'Are you sure?' },
+          method: 'delete')
