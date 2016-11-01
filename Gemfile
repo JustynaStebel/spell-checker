@@ -17,6 +17,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
