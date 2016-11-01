@@ -1,11 +1,17 @@
 
  body {
    padding: 20px;
+   color: #666666;
+ }
+
+ a {
+   color: #336699;
  }
 
  h1 {
    text-align: center;
    padding: 10px;
+   padding-top: 0;
  }
 
  .navbar {
@@ -27,3 +33,6 @@
    padding: 15px;
    margin: 0 auto;
  }
+.btn.btn-lg {
+  margin-top: 10px;
+}

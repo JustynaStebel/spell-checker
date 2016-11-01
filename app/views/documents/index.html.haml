@@ -1,13 +1,15 @@
 %h1 My documents
-= link_to 'Upload new', action: 'new'
-%table
-  %tr
-    %th Name
-  - @documents.each do |doc|
+%table.table.table-bordered
+  %thead
     %tr
-      %td= doc.name
-      %td
-        = link_to 'Preview', document_path(doc)
-        = link_to 'Edit', edit_document_path(doc)
-        = link_to('Remove', document_path(doc), data: { confirm: 'Are you sure?' },
-          method: 'delete')
+      %th.col-md-8 Document title
+      %th.col-md-4 Actions
+  %tbody
+    - @documents.each do |doc|
+      %tr
+        %td.col-md-8= doc.name
+        %td.col-md-4
+          = link_to 'Preview', document_path(doc)
+          = link_to 'Edit', edit_document_path(doc)
+          = link_to('Remove', document_path(doc), data: { confirm: 'Are you sure?' },
+            method: 'delete')
