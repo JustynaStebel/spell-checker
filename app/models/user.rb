@@ -5,4 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :documents
+
+  scope :without_admin, -> { where(admin: false) }
 end
