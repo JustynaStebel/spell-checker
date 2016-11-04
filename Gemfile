@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug', platform: :mri
