@@ -3,7 +3,7 @@
     %a= link_to "Home", current_user.admin? ? admin_users_path : user_path(current_user)
   - if current_user.admin?
     %li{ role: "presentation" }
-      %a= link_to "Dictionary", "#"
+      %a= link_to "Dictionary", admin_dictionary_path(@dictionary.id)
   - else
     %li{ role: "presentation" }
       %a= link_to "Upload file", new_document_path

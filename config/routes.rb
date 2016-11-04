@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "users#index"
     resources :users, :documents
+    resources :dictionaries, only: [:show]
   end
 end

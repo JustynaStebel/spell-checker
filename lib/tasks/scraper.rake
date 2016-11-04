@@ -34,4 +34,14 @@ namespace :scraper do
       end
     end
   end
+
+  desc "Import words to database"
+  task words_saver: :environment do
+    require 'csv'
+
+    csv = CSV.read("lib/words.csv")
+    dictionary = Dictionary.new
+    dictionary.words << csv
+    dictionary.save!
+  end
 end
