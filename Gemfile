@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'whenever', :require => false
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
