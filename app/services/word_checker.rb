@@ -31,5 +31,6 @@ attr_reader :params
     end
     incorrect_word.document_attachment_id = doc.id
     incorrect_word.save!
+    incorrect_word
   end
 end
