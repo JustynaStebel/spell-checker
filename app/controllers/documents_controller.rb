@@ -46,6 +46,12 @@ before_action :authenticate_user!
     redirect_to documents_path
   end
 
+  def check_correctness
+    @document = current_user.documents.find(params[:id])
+    @document_attachment = @document.document_attachments.find(document_params[:document_attachment_attributes][:id])
+    checker = WordChecker.new
+    checker.perform
+  end
 
  private
    def document_params

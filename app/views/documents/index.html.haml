@@ -9,7 +9,7 @@
       %tr
         %td.col-md-8= doc.name
         %td.col-md-4
-          = link_to 'Preview', document_path(doc)
+          = link_to 'Show uploads', document_path(doc)
           = link_to 'Edit', edit_document_path(doc)
           = link_to('Remove', document_path(doc), data: { confirm: 'Are you sure?' },
             method: 'delete')

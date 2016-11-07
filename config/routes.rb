@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   root "users#show"
   resources :documents do
-    resources :document_attachments
+    resources :document_attachments do
+        post :check_correctness, on: :member
+    end
   end
   namespace :admin do
     root "users#index"
