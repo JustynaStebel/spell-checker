@@ -1,7 +1,13 @@
 class WordChecker
 require 'set'
 require 'csv'
-  def process
+
+attr_reader :params
+  def initialize(params)
+    @params = params
+  end
+
+  def perform
     doc = DocumentAttachment.find(params[:id])
     text = File.read("public" + doc.file_url)
     dictionary = CSV.read("lib/words.csv")
