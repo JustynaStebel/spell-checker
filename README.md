@@ -1,24 +1,16 @@
-# README
+Spelling checker application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+How to use it:
 
-Things you may want to cover:
+* git clone the repo
 
-* Ruby version
+* bundle install
 
-* System dependencies
+* rake db:migrate
 
-* Configuration
+* rake db:seed - it will create two users - admin and normal user
 
-* Database creation
+User can upload a text file and then check if words are correct according to
+sjp.pl
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Incorrect words will be displayed.
