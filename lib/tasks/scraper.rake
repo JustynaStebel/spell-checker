@@ -7,7 +7,7 @@ namespace :scraper do
 
     words = []
     url = "http://sjp.pl/slownik/lp.phtml"
-    (1..3).each do |page_number|
+    (1..3997).each do |page_number|
       page = url + "?page=" + page_number.to_s
       doc = Nokogiri::HTML(open(page))
       headers = []
