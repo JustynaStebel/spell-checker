@@ -1,6 +1,6 @@
 %ul.nav.nav-tabs
   %li{ role: "presentation" }
-    %a= link_to "Home", current_user.admin? ? admin_users_path : user_path(current_user)
+    %a= link_to "Home", current_user.admin? ? admin_users_path : documents_path
   - if current_user.admin?
     %li{ role: "presentation" }
       %a= link_to "Dictionary", admin_dictionary_path(Dictionary.last.id)
@@ -11,5 +11,7 @@
     %a= link_to "Users", admin_users_path if current_user.admin?
   %li{:role => "presentation"}
     %a= link_to "Documents", current_user.admin? ? admin_documents_path : documents_path
+  %li{:role => "presentation"}
+    %a= link_to "My account", user_path(current_user)
   %li.pull-right{:role => "presentation"}
     %a= link_to "Logout", destroy_user_session_path

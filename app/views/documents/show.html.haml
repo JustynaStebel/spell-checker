@@ -1,7 +1,6 @@
-%p
-  %strong Title:
-  = @document.name
-  - @document_attachments.each do |p|
-    = link_to "Check correctness", check_correctness_document_document_attachment_path(@document, p), method: :post
-    = link_to 'Edit', edit_document_path(@document)
-    = link_to 'Back', documents_path
+= link_to 'Back', documents_path
+%strong Title:
+= @document.name
+- @document_attachments.each do |p|
+  = link_to 'Edit', edit_document_path(@document)
+  %p= link_to "Check correctness", check_correctness_document_document_attachment_path(@document, p), method: :post, class: "btn btn-primary"
