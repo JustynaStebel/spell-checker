@@ -23,7 +23,7 @@ before_action :authenticate_user!
        params[:document_attachments]['file'].each do |f|
           @document_attachment = @document.document_attachments.create!(:file => f)
        end
-       format.html { redirect_to @documents, notice: 'Document was successfully created.' }
+       format.html { redirect_to documents_path, notice: 'Document was successfully created.' }
      else
        format.html { render action: 'new' }
      end
